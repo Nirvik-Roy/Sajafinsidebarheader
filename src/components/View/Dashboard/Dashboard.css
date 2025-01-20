@@ -1,0 +1,87 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+.dashboard-container{
+  width: calc(100% - 200px);
+  margin-left: auto;
+  padding-right: 20px; 
+}
+.four-divs-wrapper{
+  display: flex;
+  padding-left: 10px;
+  column-gap: 20px
+}
+.small-div{
+  width: 100%;
+  max-width: 20%;
+  min-width: 20%;
+  border-radius: 15px;
+  height: 100px;
+  padding: 15px;
+}
+.small-div p{
+  font-size: 13px;
+  color: #FFFFFF;
+}
+.small-div:nth-child(1){
+  background: url("../../../assets/red-back.png");
+  background-size: cover;
+}
+.small-div:nth-child(2){
+  background: url('../../../assets/grey-back.png');
+  background-size: cover;
+}
+.small-div:nth-child(3){
+  background: url('../../../assets/brown-back.png');
+  background-size: cover;
+}
+.small-div:nth-child(4){
+  background: url('../../../assets/Group 4534359.png');
+  background-size: cover;
+}
+.crypto-market-section{
+  padding-left: 10px;
+  margin-top: 30px;
+}
+.crypto-market-section-wrapper{
+  display: flex;
+}
+.crypto-chart-section{
+  width: 100%;
+  min-width: 50%;
+  max-width: 50%;
+}
+.crypto-chart-section h2{
+  font-size: 15px;
+  font-weight: 600;
+}
+.crypto-chart-section p{
+  font-size: 12px;
+  color: #717075;
+  margin-top: 3px;
+}
+.market-chart-section{
+  width: 100%;
+  min-width: 50%;
+  max-width: 50%;
+}
+.crypto-buttons{
+  margin-top: 10px;
+  display: flex;
+  column-gap: 25px;
+}
+.crypto-btn{
+  color: #8E8E90;
+  font-size: 13px;
+}
+.market-chart-section h2{
+  font-size: 15px;
+  font-weight: 600;
+}
+.market-chart-section p{
+  font-size: 12px;
+  color: #717075;
+  margin-top: 3px;
+}
