@@ -11,7 +11,7 @@ const Header = () => {
     <>
     <Sidebar />
       <div className="header-section">
-          <div className="header-section-wrapper dashboard-content">
+          <div className="header-section-wrapper dashboard-container">
               <div className="header-left">
               <div className="header-text">
               <h2>Dashboard</h2>
