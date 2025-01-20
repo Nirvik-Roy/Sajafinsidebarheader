@@ -1,0 +1,193 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.current-completed-section{
+  display: flex;
+}
+.current-trade{
+  width: 100%;
+  min-width: 60%;
+  max-width: 60%;
+}
+.current-trade-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.current-trade-heading{
+  font-size: 15px;
+  font-weight: 500;
+}
+.current-trade-btn{
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #38BD6B;
+  color: #FFFFFF;
+}
+.completed-trade{
+  width: 100%;
+  min-width: 30%;
+  max-width: 30%;
+}
+
+
+
+
+/* Container */
+.current-trade {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Header */
+.current-trade-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.current-trade-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.current-trade-btn {
+  background: #28a745;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.current-trade-btn:hover {
+  background: #218838;
+}
+
+/* Trade List */
+.trade-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.trade-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  transition: box-shadow 0.3s;
+}
+
+.trade-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Info Section */
+.trade-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.trade-icon {
+  width: 50px;
+  height: 50px;
+  background: #f8f8f8;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.icon-image {
+  width: 80%;
+  height: 80%;
+}
+
+.trade-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.trade-symbol {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Price Section */
+.trade-price {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.trade-price h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.trade-change {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.trade-change.up {
+  color: #28a745;
+}
+
+.trade-change.down {
+  color: #dc3545;
+}
+
+/* Actions Section */
+.trade-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chart {
+  width: 70px;
+  height: 30px;
+  border-radius: 5px;
+  background: lightgray;
+}
+
+.chart.up {
+  background: linear-gradient(to right, #28a745, #85e085);
+}
+
+.chart.down {
+  background: linear-gradient(to right, #dc3545, #f28e8e);
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.action-btn:hover {
+  color: #333;
+}

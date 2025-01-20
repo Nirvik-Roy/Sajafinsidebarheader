@@ -1,7 +1,7 @@
 import React from 'react'
 import './Dashboard.css'
-import { Chart } from "react-google-charts";
 import Euro_icon from '../../../assets/image (6).png'
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
 
@@ -61,72 +61,82 @@ const tableData = [
 
 const Dashboard = () => {
   const data = [
-    ["Month", "1 ETH (USD)", "1 XRP (USD)"],
-  ["Jan", 12000, 11000],
-  ["Feb", 11500, 10500],
-  ["Mar", 11800, 10800],
-  ["Apr", 11500, 10500],
-  ["May", 11850, 10850],
-  ["Jun", 12000, 11000],
-  ["Jul", 11500, 10500],
-  ["Aug", 11800, 10800],
-  ["Sep", 11500, 10500],
-  ["Oct", 11750, 10750],
-  ["Nov", 12000, 11000],
-  ];
-
-  const options = {
-
-    curveType: "function",
-    
-    series: {
-      0: { color: "red" },
-      1: { color: "yellow" },
+    {
+      "name": "Jan",
+      "uv": 4000,
+      "pv": 2400,
+      "amt": 2400
     },
-    tooltip: {
-      isHtml: true,
+    {
+      "name": "Feb",
+      "uv": 3000,
+      "pv": 1398,
+      "amt": 2210
     },
-    legend: { position: 'none' }, 
-    vAxis: {
-    textPosition: 'none',  // Hide Y-axis labels
-  },
-  };
+    {
+      "name": "Mar",
+      "uv": 2000,
+      "pv": 9800,
+      "amt": 2290
+    },
+    {
+      "name": "Apr",
+      "uv": 2780,
+      "pv": 3908,
+      "amt": 2000
+    },
+    {
+      "name": "May",
+      "uv": 1890,
+      "pv": 4800,
+      "amt": 2181
+    },
+    {
+      "name": "June",
+      "uv": 2390,
+      "pv": 3800,
+      "amt": 2500
+    },
+    {
+      "name": "July",
+      "uv": 3490,
+      "pv": 4300,
+      "amt": 2100
+    },
+    {
+      "name": "Aug",
+      "uv": 3490,
+      "pv": 4300,
+      "amt": 2100
+    },
+    {
+      "name": "Sep",
+      "uv": 3490,
+      "pv": 4300,
+      "amt": 2100
+    },
+    {
+      "name": "Oct",
+      "uv": 3490,
+      "pv": 4300,
+      "amt": 2100
+    },
+    {
+      "name": "Nov",
+      "uv": 3490,
+      "pv": 4300,
+      "amt": 2100
+    },
+    {
+      "name": "Dec",
+      "uv": 3490,
+      "pv": 4300,
+      "amt": 2100
+    },
+  ]
 
 
-  const data2 = [
-    ["Month", "1 ETH (USD)", "1 XRP (USD)"],
-  ["Jan", 12000, 11000],
-  ["Feb", 11500, 10500],
-  ["Mar", 11800, 10800],
-  ["Apr", 11500, 10500],
-  ["May", 11850, 10850],
-  ["Jun", 12000, 11000],
-  ["Jul", 11500, 10500],
-  ["Aug", 11800, 10800],
-  ["Sep", 11500, 10500],
-  ["Oct", 11750, 10750],
-  ["Nov", 12000, 11000],
-  ];
 
-  const options2 = {
-    
-    curveType: "function",
-    
-    series: {
-      0: { color: "red" },
-      1: { color: "yellow" },
-    },
-    tooltip: {
-      isHtml: true,
-    },
-    legend: { position: 'none' }, 
-    vAxis: {
-    textPosition: 'none',
-    
-  },
-  
-  
-  };
   return (
     <>
       <div className="dashboard-container">
@@ -150,15 +160,21 @@ const Dashboard = () => {
                 <div className="crypto-btn">Watchlist</div>
                 <div className="crypto-btn">New on Cashbase</div>
               </div>
-              <div className="crypto-chart">
-              <Chart
-        chartType="LineChart"
-        width={630}
-        height="400px"
-        data={data}
-        options={options}
-      />
-              </div>
+              {/* <div className="crypto-chart"> */}
+              <ResponsiveContainer height={380}>
+
+              <LineChart data={data}
+  margin={{ top: 25,  bottom: 5, right:40 }}>
+  {/* <CartesianGrid strokeDasharray="3 3" /> */}
+  <XAxis dataKey="name" />
+  <YAxis />
+  <Tooltip />
+  {/* <Legend /> */}
+  <Line type="monotone" dataKey="pv" stroke="#DC2C1D" />
+  <Line type="monotone" dataKey="uv" stroke="#FAE01A" />
+</LineChart>
+              </ResponsiveContainer>
+              {/* </div> */}
             </div>
             <div className="market-chart-section">
               <h2>Market Overview</h2>
@@ -169,15 +185,19 @@ const Dashboard = () => {
                 <div className="crypto-btn">Watchlist</div>
                 <div className="crypto-btn">New on Cashbase</div>
               </div>
-              <div className="market-chart">
-              <Chart
-        chartType="LineChart"
-        width={630}
-        height="400px"
-        data={data2}
-        options={options2}
-      />
-              </div>
+              <ResponsiveContainer height={380}>
+
+              <LineChart data={data}
+  margin={{ top: 25,  bottom: 5, right:40 }}>
+  {/* <CartesianGrid strokeDasharray="3 3" /> */}
+  <XAxis dataKey="name" />
+  <YAxis />
+  <Tooltip />
+  {/* <Legend /> */}
+  <Line type="monotone" dataKey="pv" stroke="#DC2C1D" />
+  <Line type="monotone" dataKey="uv" stroke="#FAE01A" />
+</LineChart>
+              </ResponsiveContainer>
             </div>
           </div>
         </div>

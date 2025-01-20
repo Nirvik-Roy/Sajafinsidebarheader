@@ -6,7 +6,7 @@ import Sidebar from './Sidebar';
 import notification_btn from '../../assets/notification-btn.png'
 import profile_img from '../../assets/Ellipse 2.png'
 
-const Header = () => {
+const Header = ({name}) => {
   return (
     <>
     <Sidebar />
@@ -14,20 +14,20 @@ const Header = () => {
           <div className="header-section-wrapper dashboard-container">
               <div className="header-left">
               <div className="header-text">
-              <h2>Dashboard</h2>
+              <h2>{name}</h2>
               <p>Welcome Back <span>John Smith!</span></p>
               </div>
                 <div className="header-search-box">
                 <FontAwesomeIcon icon={faMagnifyingGlass}/>
                 </div>
               </div>
-              <div className="header-right">
+              {location.pathname=="/" ? <div className="header-right">
                 <img src={notification_btn} alt="" className='notify-btn'/>
                 <div className="profile-info">
                   <div className="profile-img"><img src={profile_img} alt="" /></div>
                   <p>John Smith</p>
                 </div>
-              </div>
+              </div> : ""}
           </div>
       </div>
     </>

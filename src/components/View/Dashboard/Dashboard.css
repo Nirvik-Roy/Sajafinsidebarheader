@@ -42,7 +42,7 @@
   background-size: cover;
 }
 .crypto-market-section{
-  padding-left: 20px;
+  /* padding-left: 20px; */
   margin-top: 30px;
 }
 .crypto-market-section-wrapper{
@@ -50,8 +50,8 @@
 }
 .crypto-chart-section{
   width: 100%;
-  min-width: 50%;
-  max-width: 50%;
+  min-width: 47%;
+  max-width: 47%;
 }
 .crypto-chart-section h2{
   font-size: 15px;
@@ -71,8 +71,8 @@
 }
 .market-chart-section{
   width: 100%;
-  min-width: 50%;
-  max-width: 50%;
+  min-width: 47%;
+  max-width: 47%;
 }
 .crypto-buttons{
   margin-top: 10px;
@@ -103,6 +103,7 @@
   display: flex;
   column-gap: 30px;
   padding-left: 20px;
+  margin-top: 30px;
 }
 
 .sell-order-table-container {

@@ -1,11 +1,12 @@
 import React from 'react'
 import Header from '../layout/Header'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 
 const MainLayout = () => {
+  const location = useLocation()
   return (
     <>
-      <Header />
+      {location.pathname=="/" ? <Header name={"Dashboard"}/> : location.pathname=="/statistics" ? <Header name={"Statistics"}/> : ""}
       <Outlet />
     </>
   )
