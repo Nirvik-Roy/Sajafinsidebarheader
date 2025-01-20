@@ -1,28 +1,84 @@
 import React from 'react'
 import './Dashboard.css'
 import { Chart } from "react-google-charts";
+import Euro_icon from '../../../assets/image (6).png'
+
+
+
+
+
+const tableData = [
+  {
+    product: "EURUSD",
+    price: 120.45,
+    amount: 120.45,
+    total: "$1234.4",
+    type: "CURRENCY",
+    icon: Euro_icon, 
+  },
+  {
+    product: "EURUSD",
+    price: 120.45,
+    amount: 120.45,
+    total: "$1234.4",
+    type: "CURRENCY",
+    icon: Euro_icon,
+  },
+  {
+    product: "EURUSD",
+    price: 120.45,
+    amount: 120.45,
+    total: "$1234.4",
+    type: "CURRENCY",
+    icon: Euro_icon,
+  },
+  {
+    product: "EURUSD",
+    price: 120.45,
+    amount: 120.45,
+    total: "$1234.4",
+    type: "CURRENCY",
+    icon: Euro_icon,
+  },
+  {
+    product: "EURUSD",
+    price: 120.45,
+    amount: 120.45,
+    total: "$1234.4",
+    type: "CURRENCY",
+    icon: Euro_icon,
+  },
+  {
+    product: "EURUSD",
+    price: 120.45,
+    amount: 120.45,
+    total: "$1234.4",
+    type: "CURRENCY",
+    icon: Euro_icon,
+  },
+];
 
 
 const Dashboard = () => {
   const data = [
     ["Month", "1 ETH (USD)", "1 XRP (USD)"],
-    ["Jan", 12000, 400],
-    ["Feb", 11500, 380],
-    ["Mar", 11000, 360],
-    ["Apr", 10536.4, 345],
-    ["May", 10200, 320],
-    ["Jun", 9800, 310],
-    ["Jul", 9400, 300],
-    ["Aug", 9100, 290],
-    ["Sep", 8800, 280],
-    ["Oct", 8500, 270],
-    ["Nov", 8200, 260],
+  ["Jan", 12000, 11000],
+  ["Feb", 11500, 10500],
+  ["Mar", 11800, 10800],
+  ["Apr", 11500, 10500],
+  ["May", 11850, 10850],
+  ["Jun", 12000, 11000],
+  ["Jul", 11500, 10500],
+  ["Aug", 11800, 10800],
+  ["Sep", 11500, 10500],
+  ["Oct", 11750, 10750],
+  ["Nov", 12000, 11000],
   ];
 
   const options = {
-    title: "Cryptocurrency Prices (2025)",
+
     curveType: "function",
-    legend: { position: "bottom" },
+    
     series: {
       0: { color: "red" },
       1: { color: "yellow" },
@@ -30,28 +86,32 @@ const Dashboard = () => {
     tooltip: {
       isHtml: true,
     },
+    legend: { position: 'none' }, 
+    vAxis: {
+    textPosition: 'none',  // Hide Y-axis labels
+  },
   };
 
 
   const data2 = [
     ["Month", "1 ETH (USD)", "1 XRP (USD)"],
-    ["Jan", 12000, 400],
-    ["Feb", 11500, 380],
-    ["Mar", 11000, 360],
-    ["Apr", 10536.4, 345],
-    ["May", 10200, 320],
-    ["Jun", 9800, 310],
-    ["Jul", 9400, 300],
-    ["Aug", 9100, 290],
-    ["Sep", 8800, 280],
-    ["Oct", 8500, 270],
-    ["Nov", 8200, 260],
+  ["Jan", 12000, 11000],
+  ["Feb", 11500, 10500],
+  ["Mar", 11800, 10800],
+  ["Apr", 11500, 10500],
+  ["May", 11850, 10850],
+  ["Jun", 12000, 11000],
+  ["Jul", 11500, 10500],
+  ["Aug", 11800, 10800],
+  ["Sep", 11500, 10500],
+  ["Oct", 11750, 10750],
+  ["Nov", 12000, 11000],
   ];
 
   const options2 = {
-    title: "Cryptocurrency Prices (2025)",
+    
     curveType: "function",
-    legend: { position: "bottom" },
+    
     series: {
       0: { color: "red" },
       1: { color: "yellow" },
@@ -59,6 +119,13 @@ const Dashboard = () => {
     tooltip: {
       isHtml: true,
     },
+    legend: { position: 'none' }, 
+    vAxis: {
+    textPosition: 'none',
+    
+  },
+  
+  
   };
   return (
     <>
@@ -79,14 +146,14 @@ const Dashboard = () => {
               <p>Lorem ipsum dolor sit amet, consectetur</p>
               <div className="crypto-buttons">
                 <div className="crypto-btn">Bitcoin</div>
-                <div className="crypto-btn">Tradable</div>
+                <div className="crypto-btn active">Tradable</div>
                 <div className="crypto-btn">Watchlist</div>
                 <div className="crypto-btn">New on Cashbase</div>
               </div>
               <div className="crypto-chart">
               <Chart
         chartType="LineChart"
-        
+        width={630}
         height="400px"
         data={data}
         options={options}
@@ -98,14 +165,14 @@ const Dashboard = () => {
               <p>Lorem ipsum dolor sit amet, consectetur</p>
               <div className="crypto-buttons">
                 <div className="crypto-btn">Bitcoin</div>
-                <div className="crypto-btn">Tradable</div>
+                <div className="crypto-btn active">Tradable</div>
                 <div className="crypto-btn">Watchlist</div>
                 <div className="crypto-btn">New on Cashbase</div>
               </div>
               <div className="market-chart">
               <Chart
         chartType="LineChart"
-        
+        width={630}
         height="400px"
         data={data2}
         options={options2}
@@ -117,57 +184,68 @@ const Dashboard = () => {
 
 
         <div className="sell-buy-section">
-          <div className="sell-order-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Product</th>
-                  <th>Price</th>
-                  <th>Amount</th>
-                  <th>Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>EURUSD</td>
-                  <td>120.45</td>
-                  <td>120.45</td>
-                  <td>$1234.4</td>
-                </tr>
-                <tr>
-                  <td>EURUSD</td>
-                  <td>120.45</td>
-                  <td>120.45</td>
-                  <td>$1234.4</td>
-                </tr>
-                <tr>
-                  <td>EURUSD</td>
-                  <td>120.45</td>
-                  <td>120.45</td>
-                  <td>$1234.4</td>
-                </tr>
-                <tr>
-                  <td>EURUSD</td>
-                  <td>120.45</td>
-                  <td>120.45</td>
-                  <td>$1234.4</td>
-                </tr>
-                <tr>
-                  <td>EURUSD</td>
-                  <td>120.45</td>
-                  <td>120.45</td>
-                  <td>$1234.4</td>
-                </tr>
-                <tr>
-                  <td>EURUSD</td>
-                  <td>120.45</td>
-                  <td>120.45</td>
-                  <td>$1234.4</td>
-                </tr>
-              </tbody>
-            </table>
+        <div className="sell-order-table-container">
+      <h3 className='sell-order-heading'>Sell Order</h3>
+      <table className='sell-order-table'>
+        <thead className='sell-order-table-header'>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody className='sell-order-table-body'>
+          {tableData.map((row, index) => (
+            <tr key={index}>
+              <td className='sell-order-table-data'>
+                <div className="product-cell">
+                  <img src={row.icon} alt={`${row.product} Icon`} />
+                  <div>
+                    <span>{row.product}</span>
+                    <p>{row.type}</p>
+                  </div>
+                </div>
+              </td>
+              <td className='sell-order-table-data'>{row.price}</td>
+              <td className='sell-order-table-data'>{row.amount}</td>
+              <td className='sell-order-table-data'>{row.total}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+          <div className="buy-order-table-container">
+          <h3  className='buy-order-heading'>Buy Order</h3>
+      <table className='buy-order-table'>
+        <thead className='buy-order-table-header'>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tableData.map((row, index) => (
+            <tr key={index}>
+              <td className='buy-order-table-data'>
+                <div className="product-cell">
+                  <img src={row.icon} alt={`${row.product} Icon`} />
+                  <div>
+                    <span>{row.product}</span>
+                    <p>{row.type}</p>
+                  </div>
+                </div>
+              </td>
+              <td className='buy-order-table-data'>{row.price}</td>
+              <td className='buy-order-table-data'>{row.amount}</td>
+              <td className='buy-order-table-data'>{row.total}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
           </div>
-          <div className="buy-order-table"></div>
         </div>
       </div>
     </>

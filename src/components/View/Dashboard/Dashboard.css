@@ -42,7 +42,7 @@
   background-size: cover;
 }
 .crypto-market-section{
-  padding-left: 10px;
+  padding-left: 20px;
   margin-top: 30px;
 }
 .crypto-market-section-wrapper{
@@ -62,6 +62,13 @@
   color: #717075;
   margin-top: 3px;
 }
+.crypto-chart{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+  padding: 0;    
+}
 .market-chart-section{
   width: 100%;
   min-width: 50%;
@@ -71,10 +78,17 @@
   margin-top: 10px;
   display: flex;
   column-gap: 25px;
+  align-items: center;
 }
 .crypto-btn{
   color: #8E8E90;
   font-size: 13px;
+}
+.crypto-btn.active{
+  background-color: #F6D3CF;
+  padding: 3px 12px;
+  border-radius: 20px;
+  color: #DC2C1D;
 }
 .market-chart-section h2{
   font-size: 15px;
@@ -84,4 +98,123 @@
   font-size: 12px;
   color: #717075;
   margin-top: 3px;
+}
+.sell-buy-section{
+  display: flex;
+  column-gap: 30px;
+  padding-left: 20px;
+}
+
+.sell-order-table-container {
+  width: 100%;
+  max-width: 45%;
+  min-width: 45%;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.sell-order-heading {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.sell-order-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sell-order-table-header th {
+  text-align: left;
+  padding: 10px;
+  color: #717075;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.sell-order-table-body tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.sell-order-table-body tr:last-child {
+  border-bottom: none;
+}
+
+.sell-order-table-data {
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.product-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-cell img {
+  width: 30px;
+  height: 30px;
+}
+
+.product-cell div {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-cell span {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.product-cell p {
+  font-size: 0.75rem;
+  color: #888;
+  margin: 0;
+}
+.buy-order-table-container{
+  width: 100%;
+  max-width: 45%;
+  min-width: 45%;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.buy-order-heading{
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.buy-order-table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.buy-order-table-header th {
+  text-align: left;
+  padding: 10px;
+  color: #717075;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.buy-order-table-body tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.buy-order-table-body tr:last-child {
+  border-bottom: none;
+}
+
+.buy-order-table-data {
+  padding: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  vertical-align: middle;
 }
