@@ -32,7 +32,7 @@ const Header = ({name}) => {
               <div className="header-right">
                 <img src={notification_btn} alt="" className="notify-btn" />
                 <div className="profile-info">
-                  <div className="profile-img">
+                  <div className="profile-avatar-img">
                     <img src={profile_img} alt="" />
                   </div>
                   <p>John Smith</p>

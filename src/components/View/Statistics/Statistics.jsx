@@ -34,6 +34,14 @@ export const options = {
     3: { color: "#FF7C3B" }, // Yellow for "Watch TV"
     4: { color: "#ff00ff" }, // Magenta for "Sleep"
   },
+  legend: { position: "bottom" },
+  titleTextStyle: {
+    fontSize: 15, 
+    fontWeight: 500, 
+    bold: false,
+    textAlign: "center", 
+  },
+  pieSliceText: "none",
 };
 
 
@@ -45,7 +53,7 @@ export const data1 = [
 ];
 
 export const options1 = {
-  pieHole: 0.8,
+  pieHole: 0.7,
   is3D: false,
   slices: {
     0: { color: "#E1B9B6" }, // Red for "Work"
@@ -62,7 +70,7 @@ export const data2 = [
 ];
 
 export const options2 = {
-  pieHole: 0.8,
+  pieHole: 0.7,
   is3D: false,
   slices: {
     0: { color: "#E1B9B6" }, // Red for "Work"
@@ -168,7 +176,7 @@ const Statistics = () => {
     <>
       <div className="dashboard-container" style={{paddingBottom: "50px"}}>
         <div className="current-completed-section">
-          <div className="current-trade">
+          <div className="current-trade-container">
             <div className="current-trade-header">
               <h2 className='current-trade-heading'>Current Trade</h2>
               <div className="current-trade-btn">Current</div>
@@ -239,7 +247,6 @@ const Statistics = () => {
             </div>
             <div className="transaction-details">
               <h3 className="transaction-name">{transaction.name}</h3>
-              
             </div>
           </div>
           <div className="transaction-time">
@@ -366,22 +373,27 @@ const Statistics = () => {
             
           </div>
           <div className="trade-chart">
-          <h2 className='trade-chart-heading'>345</h2>
-          {/* <p className='trade-chart-para'>Trade</p> */}
+          <div className="trade-chart-text">
+                  <p className='text-number'>345</p>
+                  <p className='chart-name'>Trade</p>
+                </div>
             <Chart
               chartType="PieChart"
               width="100%"
-              height="100%"
+              height="95%"
               data={data2}
               options={options2}
             />
           </div>
           <div className="profit-chart">
-          <h2 className='trade-chart-heading'>4,563</h2>
+          <div className="profit-chart-text">
+                  <p className='text-number'>4,563</p>
+                  <p className='chart-name'>Profit</p>
+                </div>
             <Chart
               chartType="PieChart"
               width="100%"
-              height="100%"
+              height="95%"
               data={data1}
               options={options1}
             />
@@ -392,7 +404,7 @@ const Statistics = () => {
           <Chart
             chartType="PieChart"
             width="100%"
-            height="100%"
+            height="95%"
             data={data}
             options={options}
           />
