@@ -111,6 +111,59 @@ const Statistics = () => {
       graph: green_graph
     },
   ];
+
+  const transactiondata = [
+    {
+      name:"XAUUSD",
+      time: '06.24.45 AM',
+      price: '+$5,553',
+      status: 'Completed',
+      logo: xauusd_img,
+    },
+    {
+      name:"Bitcoin",
+      time: '06.24.45 AM',
+      price: '-$542',
+      status: 'Pending',
+      logo: Bitcoin_img,
+    },
+    {
+      name:"NGAS",
+      time: '06.24.45 AM',
+      price: '-$542',
+      status: 'Canceled',
+      logo: ngas_img,
+    },
+    {
+      name:"NGAS",
+      time: '06.24.45 AM',
+      price: '-$542',
+      status: 'Canceled',
+      logo: ngas_img,
+    },
+    {
+      name:"Bitcoin",
+      time: '06.24.45 AM',
+      price: '-$542',
+      status: 'Pending',
+      logo: Bitcoin_img,
+    },
+    {
+      name:"NGAS",
+      time: '06.24.45 AM',
+      price: '-$542',
+      status: 'Canceled',
+      logo: ngas_img,
+    },
+  ]
+
+
+  const getStatusColor = (status) => {
+    if (status === 'Completed') return '#00A478';
+    if (status === 'Pending') return '#8E8E90';
+    if (status === 'Canceled') return '#DC2C1D';
+    return '#000';
+  };
   return (
     <>
       <div className="dashboard-container">
@@ -175,74 +228,36 @@ const Statistics = () => {
               <div className="weekly-btn">Weekly</div>
             </div>
           </div>
+
+
+          <div className="transaction-list">
+      {transactiondata.map((transaction, index) => (
+        <div key={index} className="transaction-item">
+          <div className="transaction-info">
+            <div className="transaction-logo">
+              <img src={transaction.logo} alt={transaction.name} />
+            </div>
+            <div className="transaction-details">
+              <h3 className="transaction-name">{transaction.name}</h3>
+              
+            </div>
+          </div>
+          <div className="transaction-time">
+          <p className="transaction-time">{transaction.time}</p>
+          </div>
+
+          <div className="transaction-price">
+            <p>{transaction.price}</p>
+          </div>
+
+          <div className="transaction-status" style={{color: getStatusColor(transaction.status)}}>
+            {transaction.status}
+          </div>
+        </div>
+      ))}
+    </div>
           
-          <table className="transaction-table">
-  
-  <tbody className="transaction-body">
-    <tr className="transaction-row">
-      <td className="flexbox">
-        <img src={xauusd_img} alt="" />
-        <p>XAUUSD</p>
-      </td>
-      <td>06.24.45 AM</td>
-      <td className="positive">+$5,553</td>
-      <td className="completed">Completed</td>
-    </tr>
-
-    <tr className="transaction-row">
-      <td className="flexbox">
-        <img src={Bitcoin_img} alt="" />
-        <p>BitCoin</p>
-      </td>
-      <td>06.24.45 AM</td>
-      <td className="negative">-$542</td>
-      <td className="pending">Pending</td>
-    </tr>
-
-    <tr className="transaction-row">
-      <td className="flexbox">
-        <img src={ngas_img} alt="" />
-        <p>NGAS</p>
-      </td>
-      <td>06.24.45 AM</td>
-      <td className="negative">-$542</td>
-      <td className="canceled">Canceled</td>
-    </tr>
-
-
-    <tr className="transaction-row">
-      <td className="flexbox">
-        <img src={ngas_img} alt="" />
-        <p>NGAS</p>
-      </td>
-      <td>06.24.45 AM</td>
-      <td className="negative">-$542</td>
-      <td className="canceled">Canceled</td>
-    </tr>
-
-
-    <tr className="transaction-row">
-      <td className="flexbox">
-        <img src={Bitcoin_img} alt="" />
-        <p>BitCoin</p>
-      </td>
-      <td>06.24.45 AM</td>
-      <td className="negative">-$542</td>
-      <td className="pending">Pending</td>
-    </tr>
-
-
-    <tr className="transaction-row">
-      <td className="flexbox">
-        <img src={ngas_img} alt="" />
-        <p>NGAS</p>
-      </td>
-      <td>06.24.45 AM</td>
-      <td className="negative">-$542</td>
-      <td className="canceled">Canceled</td>
-    </tr>
-  </tbody>
-</table>
+          
 
           </div>
         </div>
