@@ -166,7 +166,7 @@ const Statistics = () => {
   };
   return (
     <>
-      <div className="dashboard-container">
+      <div className="dashboard-container" style={{paddingBottom: "50px"}}>
         <div className="current-completed-section">
           <div className="current-trade">
             <div className="current-trade-header">
@@ -291,7 +291,7 @@ const Statistics = () => {
 
             <div className="weekly-right-box">
               <div className="horizontal-bar-div">
-                <div className="sun-bar">
+                <div className="bar">
                   <div className="sun-grey-bar">
                   <div className="sun-red-bar">
                   <div className="sun-green-bar"></div>
@@ -365,34 +365,38 @@ const Statistics = () => {
             
             
           </div>
-          {/* <div className="trade-chart">
+          <div className="trade-chart">
+          <h2 className='trade-chart-heading'>345</h2>
+          {/* <p className='trade-chart-para'>Trade</p> */}
             <Chart
               chartType="PieChart"
               width="100%"
-              height="400px"
+              height="100%"
               data={data2}
               options={options2}
             />
-          </div> */}
-          {/* <div className="profit-chart">
+          </div>
+          <div className="profit-chart">
+          <h2 className='trade-chart-heading'>4,563</h2>
             <Chart
               chartType="PieChart"
               width="100%"
-              height="400px"
+              height="100%"
               data={data1}
               options={options1}
             />
-          </div> */}
-          {/* <div className="current-graph">
+          </div>
+          
+        </div>
+        <div className="current-graph">
           <Chart
             chartType="PieChart"
             width="100%"
-            height="400px"
+            height="100%"
             data={data}
             options={options}
           />
-          </div> */}
-        </div>
+          </div>
       </div>
     </>
   )

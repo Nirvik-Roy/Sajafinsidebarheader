@@ -5,31 +5,43 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Sidebar from './Sidebar';
 import notification_btn from '../../assets/notification-btn.png'
 import profile_img from '../../assets/Ellipse 2.png'
+import { useLocation } from 'react-router-dom';
 
 const Header = ({name}) => {
+
+  const location = useLocation();
+ 
   return (
     <>
     <Sidebar />
-      <div className="header-section">
+    
+        <div className="header-section">
           <div className="header-section-wrapper dashboard-container">
-              <div className="header-left">
+            <div className="header-left">
               <div className="header-text">
-              <h2>{name}</h2>
-              <p>Welcome Back <span>John Smith!</span></p>
+                <h2>{name}</h2>
+                {location.pathname=="/" ? <p>
+                  Welcome Back <span>John Smith!</span>
+                </p> : ""}
               </div>
-                <div className="header-search-box">
-                <FontAwesomeIcon icon={faMagnifyingGlass}/>
-                </div>
-              </div>
-              {location.pathname=="/" ? <div className="header-right">
-                <img src={notification_btn} alt="" className='notify-btn'/>
+              {location.pathname=="/" ? <div className="header-search-box">
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </div> : ""}
+            </div>
+            {location.pathname === '/' && (
+              <div className="header-right">
+                <img src={notification_btn} alt="" className="notify-btn" />
                 <div className="profile-info">
-                  <div className="profile-img"><img src={profile_img} alt="" /></div>
+                  <div className="profile-img">
+                    <img src={profile_img} alt="" />
+                  </div>
                   <p>John Smith</p>
                 </div>
-              </div> : ""}
+              </div>
+            )}
           </div>
-      </div>
+        </div>
+      
     </>
   )
 }
