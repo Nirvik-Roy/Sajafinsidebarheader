@@ -5,12 +5,9 @@
 }
 .current-completed-section{
   display: flex;
+  gap: 30px;
 }
-.current-trade{
-  width: 100%;
-  min-width: 60%;
-  max-width: 60%;
-}
+
 .current-trade-header{
   display: flex;
   justify-content: space-between;
@@ -21,15 +18,18 @@
   font-weight: 500;
 }
 .current-trade-btn{
-  padding: 5px 10px;
-  border-radius: 10px;
+  padding: 5px 15px;
+  border-radius: 8px;
   background-color: #38BD6B;
   color: #FFFFFF;
+  font-size: 13px;
 }
 .completed-trade{
   width: 100%;
   min-width: 30%;
   max-width: 30%;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 
@@ -40,39 +40,12 @@
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: auto;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  min-width: 50%;
+  max-width: 50%;
 }
 
-/* Header */
-.current-trade-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.current-trade-heading {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-}
-
-.current-trade-btn {
-  background: #28a745;
-  color: #fff;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.current-trade-btn:hover {
-  background: #218838;
-}
 
 /* Trade List */
 .trade-list {
@@ -85,14 +58,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  transition: box-shadow 0.3s;
-}
-
-.trade-item:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 10px;
 }
 
 /* Info Section */
@@ -103,8 +69,8 @@
 }
 
 .trade-icon {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background: #f8f8f8;
   border-radius: 50%;
   display: flex;
@@ -112,82 +78,266 @@
   align-items: center;
   overflow: hidden;
 }
-
-.icon-image {
-  width: 80%;
-  height: 80%;
-}
-
 .trade-name {
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 15px;
+  font-weight: 600;
   color: #333;
 }
 
 .trade-symbol {
-  font-size: 0.9rem;
+  font-size: 13px;
   color: #888;
 }
 
 /* Price Section */
 .trade-price {
-  text-align: center;
+  /* text-align: center; */
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 10px;
 }
+.trade-price img{
+  width: 20px;
+}
 
 .trade-price h4 {
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 13px;
+  font-weight: 600;
   color: #333;
 }
 
 .trade-change {
-  font-size: 0.9rem;
-  margin-top: 5px;
-}
-
-.trade-change.up {
-  color: #28a745;
-}
-
-.trade-change.down {
-  color: #dc3545;
+  font-size: 13px;
+  /* margin-top: 5px; */
 }
 
 /* Actions Section */
-.trade-actions {
+.trade-actions img{
+  width: 130px
+}
+.trade-view{
+  display: flex;
+  column-gap: 10px;
+}
+.trade-view img{
+  width: 15px;
+}
+
+.completed-trade{
+  width: 100%;
+  max-width: 40%;
+  min-width: 40%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.completed-trade-header{
+  display: flex;
+  justify-content: space-between;
+}
+.completed-trade-right-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.weekly-btn{
+  padding: 3px 15px;
+  background-color: #FEF2F1;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #DC2C1D;
+}
+.flexbox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.completed-trade-heading{
+  font-size: 15px;
+  font-weight: 500;
+}
+.completed-trade-para{
+  font-size: 10px;
+  color: #717479;
+}
+.yesterday-btn{
+  font-size: 12px;
+  color: #717479;
+}
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  height: 75%;
+}
+
+
+.flexbox {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.chart {
-  width: 70px;
+.flexbox img {
+  width: 30px;
   height: 30px;
-  border-radius: 5px;
-  background: lightgray;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-.chart.up {
-  background: linear-gradient(to right, #28a745, #85e085);
+
+
+.completed {
+  color: #00A478;
+  
 }
 
-.chart.down {
-  background: linear-gradient(to right, #dc3545, #f28e8e);
+.pending {
+  color: #8E8E90;
+  
 }
 
-.action-btn {
-  background: none;
-  border: none;
-  color: #888;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: color 0.3s;
+.canceled {
+  color: #DC2C1D;
+}
+.weekly-charts-wrapper{
+  display: flex;
+  margin-top: 30px;
+}
+.weekly-summary{
+  width: 100%;
+  min-width: 45%;
+  max-width: 45%;
+  height: 200px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 20px 15px;
+}
+.trade-chart{
+  width: 100%;
+  max-width: 20%;
+  min-width: 20%;
+}
+.profit-chart{
+  width: 100%;
+  max-width: 20%;
+  min-width: 20%;
+}
+.current-graph{
+  width: 100%;
+  min-width: 30%;
+  max-width: 30%;
 }
 
-.action-btn:hover {
-  color: #333;
+.weekly-summary-heading h2{
+  font-size: 18px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 15px;
+}
+.weekly-content-wrapper{
+  display: flex;
+  gap: 15px;
+}
+.weekly-left-box{
+  width: 100%;
+  min-width: 50%;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.weekly-flex-box{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.weekly-flex-box h2{
+  font-size: 18px;
+  font-weight: 500;
+}
+.weekly-flex-box p{
+  color: #717075;
+  font-size: 13px;
+}
+
+.thirty-div{
+  width: 25px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: #3AB67A;
+}
+.fourty-six-div{
+  width: 25px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: #FD5353;
+}
+.ten-div{
+  width: 25px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: #D7D7D7;
+}
+.weekly-right-box{
+  width: 100%;
+  min-width: 45%;
+  max-width: 45%;
+  display: flex;
+  column-gap: 15px;
+}
+.horizontal-bar-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.horizontal-bar-div p{
+  font-size: 13px;
+  color: #717075;
+}
+.bar{
+  width: 10px;
+  height: 100px;
+  position: relative;
+}
+.sun-grey-bar, .mon-grey-bar{
+  width: 10px;
+  height: 100px;
+  background-color: #EEEEEE;
+  border-radius: 10px;
+  position: relative;
+}
+.sun-red-bar{
+  width: 10px;
+  height: 80px;
+  background-color: #FD5353;
+  bottom: 0;
+  border-radius: 10px;
+  position: absolute;
+}
+.sun-green-bar{
+  width: 10px;
+  height: 50px;
+  background-color: #3AB67A;
+  bottom: 0;
+  border-radius: 10px;
+  position: absolute;
+}
+.mon-red-bar{
+  width: 10px;
+  height: 65px;
+  background-color: #FD5353;
+  bottom: 0;
+  border-radius: 10px;
+  position: absolute;
+}
+.mon-green-bar{
+  width: 10px;
+  height: 40px;
+  background-color: #3AB67A;
+  bottom: 0;
+  border-radius: 10px;
+  position: absolute;
 }
